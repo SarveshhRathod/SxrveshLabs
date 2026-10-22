@@ -156,6 +156,39 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
         </div>
       </div>
 
+      {/* Closed Registration Policy & Account Provisioning Hierarchy */}
+      <div className="bg-[#101726] border border-amber-500/30 rounded-xl p-6 relative overflow-hidden">
+        <div className="flex items-center gap-2 mb-2">
+          <ShieldCheck className="w-5 h-5 text-amber-400" />
+          <h2 className="text-base font-semibold text-white">
+            Closed User Provisioning Model (No Public Self-Registration)
+          </h2>
+        </div>
+        <p className="text-xs text-slate-300 leading-relaxed mb-4">
+          Public registration is strictly disabled. No visitor can create an account on their own. Accounts are provisioned through a strict hierarchical authority chain:
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+          <div className="p-3.5 rounded-lg bg-slate-900/80 border border-slate-800">
+            <div className="font-semibold text-rose-400 mb-1">1. Admin Provisions Sellers</div>
+            <p className="text-slate-400 text-[11px] leading-relaxed">
+              Only the Platform Admin creates Seller accounts, establishes their tenant boundary, and issues credentials.
+            </p>
+          </div>
+          <div className="p-3.5 rounded-lg bg-slate-900/80 border border-slate-800">
+            <div className="font-semibold text-emerald-400 mb-1">2. Sellers Provision Customers</div>
+            <p className="text-slate-400 text-[11px] leading-relaxed">
+              Each Seller creates Customer accounts for buyers, assigning licensed Python scripts and time limits.
+            </p>
+          </div>
+          <div className="p-3.5 rounded-lg bg-slate-900/80 border border-slate-800">
+            <div className="font-semibold text-blue-400 mb-1">3. Customers Log In & Run</div>
+            <p className="text-slate-400 text-[11px] leading-relaxed">
+              Customers log in using their Seller-provided credentials to run authorized scripts under the 1-device policy.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Role Perspective Contextual Card */}
       <div className="bg-[#0f1624] border border-slate-800/90 rounded-xl p-6">
         <div className="flex items-center gap-3 mb-3">

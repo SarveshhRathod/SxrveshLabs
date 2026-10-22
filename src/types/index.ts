@@ -19,12 +19,15 @@ export interface Profile {
   display_name: string;
   role: UserRole;
   status: AccountStatus;
+  created_by?: string; // Admin UUID (for sellers) or Seller UUID (for customers)
+  invitation_status?: 'invited' | 'active' | 'suspended';
   created_at: string;
   updated_at: string;
 }
 
 /**
  * 2. Sellers Table (Tenant Isolation Root)
+ * Only Admin can create Sellers.
  */
 export interface Seller {
   id: string; // e.g. "sel_..."
@@ -32,6 +35,7 @@ export interface Seller {
   seller_name: string;
   contact_email: string;
   status: AccountStatus;
+  created_by_admin_id: string; // Enforces Admin-only provisioning
   created_at: string;
 }
 
@@ -68,11 +72,14 @@ export interface ScriptVersion {
 
 /**
  * 5. Customers Table (Seller-Customer relationship)
+ * Only the respective Seller can create their Customers.
  */
 export interface Customer {
   id: string; // e.g. "cst_..."
-  seller_id: string; // references sellers(id)
+  seller_id: string; // references sellers(id) - tenant owner
   user_id: string; // references profiles(id)
+  customer_email: string;
+  created_by_seller_id: string; // Enforces Seller-only customer creation
   status: AccountStatus;
   created_at: string;
 }

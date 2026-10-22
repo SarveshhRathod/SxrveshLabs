@@ -12,8 +12,8 @@
 
 | Phase | Description | Status | Scope & Deliverables |
 | :--- | :--- | :--- | :--- |
-| **Phase 1** | **Foundation** | ✅ **COMPLETE** | Project setup, Cloudflare `wrangler.toml`, Supabase client setup with diagnostics, `.env.example`, domain TypeScript models, responsive dashboard shell, SDK preview, architectural evaluation. |
-| **Phase 2** | **Authentication** | ⏳ **NEXT UP** | Supabase Auth integration (login, signup, password reset, session persistence), user role assignment, role-gated routing. |
+| **Phase 1** | **Foundation** | ✅ **COMPLETE** | Project setup, Cloudflare `wrangler.toml`, Supabase client setup with diagnostics, `.env.example`, domain TypeScript models, responsive dashboard shell, SDK preview, architectural evaluation, `README.md`. |
+| **Phase 2** | **Authentication** | ⏳ **NEXT UP** | Closed account provisioning & auth: public self-signup disabled; Admin creates Sellers; Sellers create Customers; session persistence & role-gated routing. |
 | **Phase 3** | **Database & Permissions** | 📋 Queued | PostgreSQL migrations, RLS policies for multi-seller tenant isolation, audit logging schema. |
 | **Phase 4** | **Admin Panel** | 📋 Queued | Seller management, platform metrics, security event review, credential revocation. |
 | **Phase 5** | **Seller Panel** | 📋 Queued | Private script uploads, version management, customer invitations, license granting. |

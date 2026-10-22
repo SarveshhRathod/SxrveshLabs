@@ -188,9 +188,21 @@ ALTER TABLE public.scripts ENABLE ROW LEVEL SECURITY;
               3
             </span>
             <div>
-              <div className="font-semibold text-white">Enable Supabase Email Auth</div>
+              <div className="font-semibold text-white">Disable Public Signups (Closed Account Policy)</div>
               <p className="text-slate-400 mt-0.5">
-                In Supabase Dashboard → Authentication → Providers, ensure Email provider is enabled. In Phase 2, the app connects directly to this for user registration, multi-role assignment, and session management.
+                In Supabase Dashboard → <strong>Authentication</strong> → <strong>Providers</strong> → <strong>Email</strong>: Turn <strong>OFF</strong> "Allow new users to sign up". This ensures no random user can create an account autonomously.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-3 p-3 rounded-lg bg-slate-900/40 border border-slate-800">
+            <span className="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-400 font-mono flex items-center justify-center shrink-0">
+              4
+            </span>
+            <div>
+              <div className="font-semibold text-white">Provisioning Chain (Admin → Seller → Customer)</div>
+              <p className="text-slate-400 mt-0.5">
+                The Platform Admin manually bootstraps or invites Sellers via privileged service API. Sellers then log in to their dashboard and provision Customer accounts for buyers, binding their purchased Python scripts.
               </p>
             </div>
           </div>
